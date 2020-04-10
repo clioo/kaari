@@ -7,7 +7,7 @@
 {% block content %}
 
 <!-- Showcase -->
-<section id="showcase">
+<!-- <section id="showcase">
     <div class="container text-center">
         <div class="home-search p-5">
             <div class="overlay p-5">
@@ -19,7 +19,6 @@
                     voluptatum tempore! Consectetur, id commodi!</p>
                 <div class="search">
                     <form action="{% url 'search' %}">
-                        <!-- Form Row 1 -->
                         <div class="form-row">
                             <div class="col-md-4 mb-3">
                                 <label class="sr-only">Keywords</label>
@@ -42,7 +41,6 @@
                                 </select>
                             </div>
                         </div>
-                        <!-- Form Row 2 -->
                         <div class="form-row">
                             <div class="col-md-6 mb-3">
                                 <label class="sr-only">Bedrooms</label>
@@ -68,7 +66,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- Alerts -->
 {% include 'partials/_alerts.html' %}
@@ -76,7 +74,6 @@
 <!-- Listings -->
 <section id="listings" class="py-5">
     <div class="container">
-        <h3 class="text-center mb-3">Latest Listings</h3>
         <div class="row">
             <!-- Latest Individual Listings -->
             {% if listings %}
@@ -139,26 +136,23 @@
             <div class="col-md-4">
                 <i class="fas fa-comment fa-4x mr-4"></i>
                 <hr>
-                <h3>Consulting Services</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae,
-                    provident iste consequatur
-                    hic dignissimos ratione ea quae.</p>
+                <h3>Servicios de asesoría</h3>
+                <p>Te ayudamos a encontrar tu casa y gestionar tu crédito, siendo tu mejor aliado 
+                    asesorándote a la hora de tomar decisiones.</p>
             </div>
             <div class="col-md-4">
                 <i class="fas fa-home fa-4x mr-4"></i>
                 <hr>
-                <h3>Propery Management</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae,
-                    provident iste consequatur
-                    hic dignissimos ratione ea quae.</p>
+                <h3>Vendemos tu propiedad</h3>
+                <p>Te ayudamos con la venta de tu propiedad y gestionamos el crédito ¡Gratis!.
+                </p>
             </div>
             <div class="col-md-4">
                 <i class="fas fa-suitcase fa-4x mr-4"></i>
                 <hr>
-                <h3>Renting & Selling</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae,
-                    provident iste consequatur
-                    hic dignissimos ratione ea quae.</p>
+                <h3>Rentamos tu propiedad</h3>
+                <p>Encontramos la mejor colonia para rentar por ti.
+                </p>
             </div>
         </div>
     </div>
