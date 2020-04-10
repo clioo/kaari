@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
-{% block title %} | User Dashboard {% endblock %}
+{% block title %} | Panel de usuario {% endblock %}
 
 {% block content %}
 <section id="showcase-inner" class="py-5 text-white">
     <div class="container">
         <div class="row text-center">
             <div class="col-md-12">
-                <h1 class="display-4">User Dashboard</h1>
-                <p class="lead">Manage your BT Real Estate account</p>
+                <h1 class="display-6">Panel de usuario</h1>
+                <p class="lead">Administra tu usuario</p>
             </div>
         </div>
     </div>
@@ -21,9 +21,9 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="{% url 'index' %}">
-                        <i class="fas fa-home"></i> Home</a>
+                        <i class="fas fa-home"></i> Inicio</a>
                 </li>
-                <li class="breadcrumb-item active"> Dashboard</li>
+                <li class="breadcrumb-item active"> Panel</li>
             </ol>
         </nav>
     </div>
@@ -34,16 +34,16 @@
 
 <section id="dashboard" class="py-4">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Welcome {{ user.first_name }}</h2>
+        <div class="row ">
+            <div class="col-md-12 ">
+                <h2 class="text-center">Bienvenido {{ user.first_name }}</h2>
                 {% if contacts %}
-                    <p>Here are the property listings that you have inquired about</p>
+                    <p>Aquí están las propiedades que te han interesado</p>
                     <table class="table">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Property</th>
+                                <th scope="col">Propiedad</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -60,7 +60,10 @@
                         </tbody>
                     </table>
                 {% else %}
-                    <p>You have not made any inquiries</p>
+                    <p class="text-center">No has tenido intereses, mira nuestros listados.</p>
+                    <div class="d-flex justify-content-center">
+                        <a class="btn btn-primary" href="{%url 'index'%}">Ver listados</a>
+                    </div>
                 {% endif %}
             </div>
         </div>

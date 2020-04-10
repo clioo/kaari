@@ -27,3 +27,6 @@ class Listing(models.Model):
     list_date = models.DateTimeField(default=datetime.now, blank=True)
     def __str__(self): #Show title as the identifier
         return self.title
+    class Meta:
+        verbose_name='Inmueble'
+        verbose_name_plural='Inmuebles'

@@ -11,3 +11,7 @@ class Realtor(models.Model):
     hire_date = models.DateTimeField(default=datetime.now, blank=True)
     def __str__(self): #Show name as the identifying field
         return self.name
+    class Meta:
+        verbose_name='Agente'
+        verbose_name_plural='Agentes'
+        
