@@ -63,19 +63,19 @@
                     <div class="col-md-6">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item text-secondary">
-                                <i class="fas fa-money-bill-alt"></i> Asking Price:
+                                <i class="fas fa-money-bill-alt"></i> Precio:
                                 <span class="float-right">${{ listing.price | intcomma }}</span>
                             </li>
                             <li class="list-group-item text-secondary">
-                                <i class="fas fa-bed"></i> Bedrooms:
+                                <i class="fas fa-bed"></i> Cuartos:
                                 <span class="float-right">{{ listing.bedrooms }}</span>
                             </li>
                             <li class="list-group-item text-secondary">
-                                <i class="fas fa-bath"></i> Bathrooms:
+                                <i class="fas fa-bath"></i> Baños:
                                 <span class="float-right">{{ listing.bathrooms }}</span>
                             </li>
                             <li class="list-group-item text-secondary">
-                                <i class="fas fa-car"></i> Garage:
+                                <i class="fas fa-car"></i> Cochera:
                                 <span class="float-right">{{ listing.garage }}
                                 </span>
                             </li>
@@ -84,20 +84,20 @@
                     <div class="col-md-6">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item text-secondary">
-                                <i class="fas fa-th-large"></i> Square Feet:
+                                <i class="fas fa-th-large"></i> Metros cuadrados de construcción:
                                 <span class="float-right">{{ listing.sqft }}</span>
                             </li>
                             <li class="list-group-item text-secondary">
-                                <i class="fas fa-square"></i> Lot Size:
-                                <span class="float-right">{{ listing.lot_size }} Acres
+                                <i class="fas fa-square"></i> Metrso cuadrados totales:
+                                <span class="float-right">{{ listing.lot_size }}
                                 </span>
                             </li>
                             <li class="list-group-item text-secondary">
-                                <i class="fas fa-calendar"></i> Listing Date:
+                                <i class="fas fa-calendar"></i> Fecha de publicación:
                                 <span class="float-right">{{ listing.list_date }}</span>
                             </li>
                             <li class="list-group-item text-secondary">
-                                <i class="fas fa-bed"></i> Realtor:
+                                <i class="fas fa-bed"></i> Asesor inmobiliario:
                                 <span class="float-right">{{ listing.realtor }}
                                 </span>
                             </li>
@@ -122,8 +122,9 @@
                         <h6 class="text-secondary">{{ listing.realtor }}</h6>
                     </div>
                 </div>
-                <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Make An
-                    Inquiry</button>
+                <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">
+                    Me interesa
+                </button>
             </div>
         </div>
     </div>
@@ -150,27 +151,19 @@
                     <input type="hidden" name="realtor_email" value="{{ listing.realtor.email }}">
                     <input type="hidden" name="listing_id" value="{{ listing.id }}">
                     <div class="form-group">
-                        <label for="property_name" class="col-form-label">Property:</label>
-                        <input type="text" name="listing" class="form-control" value="{{ listing.title }}">
-                    </div>
-                    <div class="form-group">
-                        <label for="name" class="col-form-label">Name:</label>
+                        <label for="name" class="col-form-label">Nombre:</label>
                         <input type="text" name="name" class="form-control" {% if user.is_authenticated %} value="{{ user.first_name }} {{ user.last_name }}" {% endif %} required>
                     </div>
                     <div class="form-group">
-                        <label for="email" class="col-form-label">Email:</label>
-                        <input type="email" name="email" class="form-control" {% if user.is_authenticated %} value="{{ user.email }}" {% endif %} required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone" class="col-form-label">Phone:</label>
+                        <label for="phone" class="col-form-label">Teléfono:</label>
                         <input type="text" name="phone" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="message" class="col-form-label">Message:</label>
+                        <label for="message" class="col-form-label">Mensaje:</label>
                         <textarea name="message" class="form-control"></textarea>
                     </div>
                     <hr>
-                    <input type="submit" value="Send" class="btn btn-block btn-secondary">
+                    <input type="submit" value="Enviar" class="btn btn-block btn-primary">
                 </form>
             </div>
         </div>

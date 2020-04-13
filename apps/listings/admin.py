@@ -1,7 +1,12 @@
 from django.contrib import admin
 import locale
 
-from .models import Listing
+from .models import Listing,SellType
+
+@admin.register(SellType)
+class TipoVentaAdmin(admin.ModelAdmin):
+    list_display = ('id','name',)
+    list_display_link = ['id','name']
 
 class ListingAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'is_published', 'dollar_price', 'list_date', 'realtor') #display dollar amount rather than price

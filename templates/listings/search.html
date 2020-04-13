@@ -16,7 +16,7 @@
                         <div class="col-md-4 mb-3">
                             <label class="sr-only">Keywords</label>
                             <input type="text" name="keywords" class="form-control"
-                                placeholder="Keyword (Pool, Garage, etc)" value={{ values.keywords }}>
+                                placeholder="Keyword (Pool, Cochera, etc)" value={{ values.keywords }}>
                         </div>
 
                         <div class="col-md-4 mb-3">
@@ -41,9 +41,9 @@
                     <!-- Form Row 2 -->
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
-                            <label class="sr-only">Bedrooms</label>
+                            <label class="sr-only">Cuartos</label>
                             <select name="bedrooms" class="form-control">
-                                <option selected="true" disabled="disabled">Bedrooms (Any)</option>
+                                <option selected="true" disabled="disabled">Cuartos (Any)</option>
                                 {% for key,value in bedroom_choices.items %}
                                     <option value="{{ key }}"
                                     {% if key == values.bedrooms %}
@@ -115,15 +115,15 @@
                         <hr>
                         <div class="row py-2 text-secondary">
                             <div class="col-6">
-                                <i class="fas fa-th-large"></i> Sqft: {{ listing.sqft }}</div>
+                                <i class="fas fa-th-large"></i> Metros cuadrados: {{ listing.sqft }}</div>
                             <div class="col-6">
-                                <i class="fas fa-car"></i> Garage: {{ listing.garage }}</div>
+                                <i class="fas fa-car"></i> Cochera: {{ listing.garage }}</div>
                         </div>
                         <div class="row py-2 text-secondary">
                             <div class="col-6">
-                                <i class="fas fa-bed"></i> Bedrooms: {{ listing.bedrooms }}</div>
+                                <i class="fas fa-bed"></i> Cuartos: {{ listing.bedrooms }}</div>
                             <div class="col-6">
-                                <i class="fas fa-bath"></i> Bathrooms: {{ listing.bathrooms }}</div>
+                                <i class="fas fa-bath"></i> Baños: {{ listing.bathrooms }}</div>
                         </div>
                         <hr>
                         <div class="row py-2 text-secondary">
@@ -135,14 +135,14 @@
                                 <i class="fas fa-clock"></i> {{ listing.list_date | timesince }}</div>
                         </div>
                         <hr>
-                        <a href="{% url 'listing' listing.id %}" class="btn btn-primary btn-block">More Info</a>
+                        <a href="{% url 'listing' listing.id %}" class="btn btn-primary btn-block">Más información</a>
                     </div>
                 </div>
             </div>
             {% endfor %}
         {% else %}
         <div class="col-md-12">
-            <p>No Listings Available</p>
+            <p>No hay casas disponibles</p>
         </div>
         {% endif %}
         </div>

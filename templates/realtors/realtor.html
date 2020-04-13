@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} | About Us {% endblock %}
+
+{% block content %}
+
+{%block extrastyle%}
+<style>
+#realtor{
+    max-width: 400px;
+}
+</style>
+{%endblock%}
+
+<!-- Team -->
+<section id="team" class="py-5">
+    <div class="container">
+        <h2 class="text-center">{{ realtor.name }}</h2>
+        <div class="row text-center">
+                    <div class="col-12">
+                        <img id="realtor" src="{{ realtor.photo.url }}" alt="" class="rounded-circle mb-3">
+                        <h4>{{ realtor.name }}</h4>
+                        <p class="text-success">
+                            <i class="fas {% if realtor.is_mvp %}fa-award{% endif %} text-success mb-3"></i> Agente inmobiliario</p>
+                        <hr>
+                        <p>
+                            <i class="fas fa-phone"></i> {{ realtor.phone }}</p>
+                        <p>
+                            <i class="fas fa-envelope-open"></i> {{ realtor.email }}</p>
+                    </div>
+
+        </div>
+        <h3 class="text-center">{{realtor.description}}</h3>
+    </div>
+</section>
+
+{%endblock%}
