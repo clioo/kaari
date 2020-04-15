@@ -25,8 +25,8 @@ def contact(request):
         send_mail(
           subject='Nuevo interés en tu bien.',
           message="""
-          Comunícate con {name} al teléfono <strong>{phone}.</strong>
-          """.format(),
+          Comunícate con {0} al teléfono <strong>{1}.</strong>
+          """.format(name,phone),
           from_email='Equipo kaari',
           recipient_list=['19jesusacosta96@gmail.com', realtor_email],
           fail_silently=False
