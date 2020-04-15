@@ -4,6 +4,9 @@ from apps.realtors.models import Realtor
 
 class SellType(models.Model):
     name=models.CharField(max_length=50, verbose_name='Nombre')
+    def __str__(self):
+        return self.name
+    
     class Meta:
         verbose_name='Tipo de venta'
         verbose_name_plural='Tipos de venta'
@@ -37,3 +40,4 @@ class Listing(models.Model):
     class Meta:
         verbose_name='Inmueble'
         verbose_name_plural='Inmuebles'
+

@@ -135,7 +135,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="inquiryModalLabel">Make An Inquiry</h5>
+                <h5 class="modal-title" id="inquiryModalLabel">Me interesa</h5>
                 <button type="button" class="close" data-dismiss="modal">
                     <span>&times;</span>
                 </button>
@@ -170,3 +170,12 @@
     </div>
 </div>
 {% endblock %}
+
+{% block extrascripts %}
+<script>
+    $(document).ready(()=>{
+        $('input[name="phone"').mask('(000) 000 00 00');
+        console.log('sad')
+    })
+</script>
+{% endblock extrascripts %}

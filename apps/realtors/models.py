@@ -16,4 +16,5 @@ class Realtor(models.Model):
     class Meta:
         verbose_name='Agente'
         verbose_name_plural='Agentes'
+    
         
