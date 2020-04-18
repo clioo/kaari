@@ -44,12 +44,14 @@
         <div class="row">
             <div class="col-md-9">
                 <!-- Home Main Image -->
-                <img src="{{ listing.photo_main.url }}" alt="" class="img-main img-fluid mb-3" />
+                <a href="{{ listing.photo_main.url }}" data-lightbox="home-images">
+                    <img src="{{ listing.photo_main.url }}" alt="" class="img-main img-fluid mb-3" />
+                </a>
                 <!-- Thumbnails -->
                 {% if other_images %}
                 <div class="row mb-5 thumbs">
                     {% for url in other_images %}
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-4">
                         <!-- <img src="{{ url }}"/> -->
                         <a href="{{ url }}" data-lightbox="home-images">
                             <img src="{{ url }}" alt="" class="img-fluid" />
@@ -175,7 +177,7 @@
 <script>
     $(document).ready(()=>{
         $('input[name="phone"').mask('(000) 000 00 00');
-        console.log('sad')
+
     })
 </script>
 {% endblock extrascripts %}
