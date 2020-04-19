@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.contrib import messages
 from django.core.mail import send_mail
 from apps.contacts.models import Contact,OurListingInterest
@@ -22,7 +23,8 @@ def contact(request):
         interest = OurListingInterest(listing=listing,message=message)
         interest.save()
         contact.our_listing_interest.add(interest.id)
-            
+        listingURL = 'kaari.com.mx' + reverse('listing',
+                kwargs={'listing_id': listing_id})
         send_mail(
           subject='Nuevo interés en tu bien.',
           message='',
@@ -35,7 +37,11 @@ def contact(request):
           <h3>
           Comunícate lo antes posible con {0} al teléfono <strong>{1}.</strong>
           </h3>
-          """.format(name,phone,message),
+          <br>
+          <a href="{3}">
+          <h3>{4}</h3>
+          </a>
+          """.format(name,phone,message,listingURL,listing.title),
           from_email='Equipo kaari',
           recipient_list=['19jesusacosta96@gmail.com', realtor_email],
           fail_silently=False,
